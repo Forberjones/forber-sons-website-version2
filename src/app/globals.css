@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* If you also have these, keep them AFTER the import */
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Your colour vars are fine */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* 👇 IMPORTANT: map Tailwind's font-sans to Lexend */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-lexend);   /* 👈 switch to Lexend */
+  /* keep mono if you want, or remove */
+  /* --font-mono: var(--font-geist-mono); */
+}
+
+/* Dark mode vars */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Remove any hard-coded font-family here */
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Smooth, infinite horizontal scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* because we duplicated the list */
+}
+.marquee {
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+/* Soft fade on left/right edges of the track */
+.fade-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+
+/* hide horizontal scrollbar but keep scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none;        /* IE/Edge */
+  scrollbar-width: none;           /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar { /* Chrome/Safari */
+  display: none;
+}
+
