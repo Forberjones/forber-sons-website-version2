@@ -54,6 +54,10 @@ export const services: Service[] = [
     accent: "bg-sky-500/15 text-sky-300",
     icon: Icons.certificate,
     heroImage: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/Services/EICR-1_NEW.png",
+      "/Services/EICR-2_NEW.png",
+    ], 
     highlights: [
       "Periodic inspection & testing to BS 7671:2018+A2:2022",
       "Clear coding (C1/C2/C3/FI) with remedial recommendations",
@@ -69,7 +73,6 @@ export const services: Service[] = [
       "✅ Portfolio & Multi-Site Management",
       "We specialise in managing EICR programmes for landlords and portfolio managers, delivering consolidated reports across multiple sites.",
       "From single properties to nationwide schedules, we keep you compliant and your tenants safe.",
-
     ],
     ctaLabel: "Book an EICR",
   },
@@ -143,9 +146,9 @@ export const services: Service[] = [
       "/GeneralMaintenance/GM_3.png",
     ],    
     highlights: [
-      "Break/fix call-outs and planned maintenance",
+      "Call outs",
       "Lighting, containment, distribution upgrades",
-      "Commercial & industrial",
+      "Commercial & industrial sectors",
     ],
     body: [
       "✅ Planned & Reactive Maintenance",
@@ -166,7 +169,7 @@ export const services: Service[] = [
     short: "Portable Appliance Testing for compliance and safety.",
     accent: "bg-purple-500/15 text-purple-300",
     icon: Icons.shield,
-    heroImage: "/AboutImages/Coming_Soon.png",
+    heroImage: "/Services/What-is-PAT-Testing.png",
     highlights: [
       "Appliance inventory & testing labels",
       "Detailed pass/fail report with retest dates",

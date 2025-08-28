@@ -66,7 +66,6 @@ export default function Page() {
               <a href="tel:+447976836255" className="text-white hover:underline">
                 07976 836255 <br></br> 07770 565936
               </a>
-              <div className="text-gray-400 text-sm">Office</div>
             </div>
           </div>
 
@@ -78,9 +77,6 @@ export default function Page() {
               </span>
               <h2 className="text-white font-semibold">Email us</h2>
             </div>
-            <p className="mt-3 text-gray-300">
-              We aim to reply the same business day.
-            </p>
             <div className="mt-4 space-y-1">
               <a href="mailto:info@forberandsons.co.uk" className="text-white hover:underline">
                 forberelectrical@gmail.com

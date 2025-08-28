@@ -28,10 +28,10 @@ export default function HomePage() {
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <Image
-              src="/HomePageContents/Forber-Sons-Logo-2.png"
+              src="/HomePageContents/Final_Logo_Test.png"
               alt="Forber & Sons Logo"
-              width={260}
-              height={260}
+              width={320}
+              height={320}
               className="object-contain"
             />
           </div>
