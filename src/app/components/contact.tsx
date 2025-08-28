@@ -8,7 +8,7 @@ export default function ContactCta() {
         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl ring-1 ring-white/10">
           {/* Replace with your own image in /public */}
           <Image
-            src="/HomePageContents/IMG_4194.jpg"
+            src="/HomePageContents/Contact_CherryPicker.png"
             alt="Forber & Sons on-site"
             fill
             className="object-cover"
@@ -76,7 +76,7 @@ export default function ContactCta() {
             </a>
 
             <a
-              href="tel:+44151XXXXXXX"
+              href=""
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-gray-200 hover:bg-white/10"
             >
               {/* phone */}

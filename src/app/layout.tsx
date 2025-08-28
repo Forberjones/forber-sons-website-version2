@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} antialiased font-sans bg-black min-h-screen flex flex-col`}>
+      <body className={`${lexend.variable} antialiased font-sans bg-black min-h-screen flex flex-col overflow-x-hidden`}>
         <Header />
   <main className="bg-black flex-1">
     <Providers>{children}</Providers>

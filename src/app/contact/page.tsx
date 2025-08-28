@@ -63,7 +63,7 @@ export default function Page() {
               Mon–Fri, 8:00–17:00 (out-of-hours by arrangement)
             </p>
             <div className="mt-4 space-y-1">
-              <a href="tel:+441515551234" className="text-white hover:underline">
+              <a href="tel:+447976836255" className="text-white hover:underline">
                 07976 836255 <br></br> 07770 565936
               </a>
               <div className="text-gray-400 text-sm">Office</div>

@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="mt-10 text-center">
             <p className="text-sky-300 text-xs md:text-sm tracking-widest">ABOUT US</p>
             <h1 className="mt-2 text-3xl md:text-4xl font-semibold text-white">
-              Reliable. Compliant. Experienced.
+              Trusted. Compliant. Experienced.
             </h1>
 
             <div className="mt-4 space-y-4 text-gray-300 leading-relaxed max-w-3xl mx-auto">

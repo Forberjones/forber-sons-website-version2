@@ -80,18 +80,27 @@ const items: Service[] = [
 export default function Services() {
   return (
     <section className="bg-black">
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <p className="text-center text-sky-300 text-sm tracking-widest">Safe • Compliant • Professional</p>
-        <h2 className="mt-2 text-center text-3xl md:text-4xl font-semibold text-white">Services we offer</h2>
+      {/* overflow-x-hidden here fences off any rounding error */}
+      <div className="mx-auto max-w-6xl px-4 py-16 overflow-x-hidden">
+        <p className="text-center text-sky-300 text-sm tracking-widest">
+          Safe • Compliant • Professional
+        </p>
+        <h2 className="mt-2 text-center text-3xl md:text-4xl font-semibold text-white">
+          Services we offer
+        </h2>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 min-w-0">
           {items.map((s) => (
             <Link
               key={s.href}
               href={s.href}
-              className="group relative flex items-center gap-4 rounded-full bg-white/5 px-5 py-5 ring-1 ring-white/10 hover:bg-white/7.5 hover:ring-white/20 transition"
+              className="group relative w-full min-w-0 box-border flex items-center gap-4
+                         rounded-full bg-white/5 px-5 py-5 ring-1 ring-white/10
+                         hover:bg-white/10 transition overflow-hidden"
             >
-              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${s.accent}`}>
+              <span
+                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${s.accent}`}
+              >
                 {s.icon}
               </span>
 
@@ -100,9 +109,9 @@ export default function Services() {
                 <div className="text-gray-300 text-sm truncate">{s.desc}</div>
               </div>
 
-              <span className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20">
+              <span className="ml-auto flex-none inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20">
                 <svg viewBox="0 0 24 24" className="h-4 w-4 text-white/80" fill="currentColor">
-                  <path d="M10 17l5-5-5-5v10z"/>
+                  <path d="M10 17l5-5-5-5v10z" />
                 </svg>
               </span>
             </Link>

@@ -36,13 +36,18 @@ body {
   color: var(--foreground);
 }
 
+/* --------------------------- */
+/* 👇 Add the marquee rules here, after base + body */
+/* --------------------------- */
+
 /* Smooth, infinite horizontal scroll */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* because we duplicated the list */
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); } /* because we duplicated the list */
 }
 .marquee {
   width: max-content;
+  will-change: transform;
   animation: marquee 30s linear infinite;
 }
 
@@ -52,8 +57,12 @@ body {
           mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; transform: none !important; }
+}
 
-/* hide horizontal scrollbar but keep scrolling */
+/* Hide horizontal scrollbar but keep scrolling */
 .no-scrollbar {
   -ms-overflow-style: none;        /* IE/Edge */
   scrollbar-width: none;           /* Firefox */
@@ -61,4 +70,3 @@ body {
 .no-scrollbar::-webkit-scrollbar { /* Chrome/Safari */
   display: none;
 }
-

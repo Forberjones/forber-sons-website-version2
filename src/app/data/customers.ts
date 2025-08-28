@@ -13,7 +13,7 @@ const customers: Customer[] = [
   { title: "Client H", img: "/CustomerImages/Honeywell_Logo.png" },
   { title: "Client I", img: "/CustomerImages/Sodexo_Photopea_3.png" },
   { title: "Client J", img: "/CustomerImages/THG_Photopea.png" },
-  { title: "Client K", img: "/CustomerImages/Kalzip_BW_Logo.WEBP" },
+  { title: "Client K", img: "/CustomerImages/Kalzip_BW_Logo.webp" },
   // add as many as you like
 ];
 

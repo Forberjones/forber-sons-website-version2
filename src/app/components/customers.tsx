@@ -3,8 +3,7 @@ import Image from "next/image";
 import customers from "../data/customers";
 
 export default function Customers() {
-  // Duplicate once for seamless loop
-  const loop = [...customers, ...customers];
+  const loop = [...customers, ...customers]; // seamless
 
   return (
     <section id="customers" className="bg-black">
@@ -15,25 +14,33 @@ export default function Customers() {
           We’re proud to support businesses across the UK with compliant, dependable electrical work.
         </p>
 
-        {/* marquee container with a soft fade on the edges */}
         <div className="mt-8 overflow-hidden fade-mask">
-          <div className="marquee flex items-center gap-10">
+          <ul className="marquee m-0 p-0 list-none flex items-center will-change-transform select-none">
             {loop.map((c, i) => (
-              <div key={`${c.title}-${i}`} className="shrink-0">
+              // render logo + spacer pair for each item
+              <li
+                key={`${c.title}-${i}`}
+                className="flex-none flex items-center"
+                aria-hidden={i >= customers.length ? true : undefined}
+              >
+                {/* natural width logo, fixed height for consistency */}
                 <Image
                   src={c.img}
                   alt={c.title}
-                  width={160}
-                  height={80}
-                  className="h-16 w-auto max-w-[240px] object-contain opacity-80 hover:opacity-100 transition"
+                  width={240}            // large enough to cover widest logo
+                  height={48}
+                  className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  priority={i < 6}
                 />
-              </div>
+                {/* fixed-width spacer (NOT CSS gap) */}
+                <span
+                  aria-hidden="true"
+                  className="block w-[40px] md:w-[48px] h-px"
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-
-        {/* optional: small note or CTA */}
-        {/* <p className="mt-6 text-xs text-gray-400">Logos are for illustration; trademarks are property of their owners.</p> */}
       </div>
     </section>
   );

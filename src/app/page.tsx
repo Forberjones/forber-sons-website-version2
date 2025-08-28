@@ -13,7 +13,7 @@ export default function HomePage() {
         {/* Background image + overlays */}
         <div className="absolute inset-0">
           <Image
-            src="/HomePageContents/Cover_Page_1.jpg"
+            src="/HomePageContents/Cover_Page_1.JPG"
             alt=""
             fill
             priority
