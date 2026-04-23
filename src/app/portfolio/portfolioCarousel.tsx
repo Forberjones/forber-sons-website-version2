@@ -245,10 +245,16 @@ function usePagedGridLayout(): Layout {
 
   useEffect(() => {
     const compute = () => {
-      const w = window.innerWidth;
-      const cols: 1 | 2 | 3 = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
-      const rows: 3 = 3;
-      setLayout({ cols, rows, pageSize: cols * rows });
+      const width = window.innerWidth;
+
+      const cols = width >= 1024 ? 3 : width >= 640 ? 2 : 1;
+      const rows = 3;
+
+      setLayout({
+        cols: cols as Layout["cols"],
+        rows: rows as Layout["rows"],
+        pageSize: cols * rows,
+      });
     };
 
     compute();

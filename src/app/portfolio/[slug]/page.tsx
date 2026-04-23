@@ -168,12 +168,12 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Keeping this here in case you want the details section back
-function DetailRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between border-b border-white/10 pb-2">
-      <span>{label}</span>
-      <span className="text-white">{value}</span>
-    </div>
-  );
-}
+// // Keeping this here in case you want the details section back
+// function DetailRow({ label, value }: { label: string; value: string }) {
+//   return (
+//     <div className="flex justify-between border-b border-white/10 pb-2">
+//       <span>{label}</span>
+//       <span className="text-white">{value}</span>
+//     </div>
+//   );
+// }
