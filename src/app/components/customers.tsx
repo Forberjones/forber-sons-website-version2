@@ -3,10 +3,10 @@ import Image from "next/image";
 import customers from "../data/customers";
 
 export default function Customers() {
-  const loop = [...customers, ...customers]; // seamless
+  const loop = [...customers, ...customers];
 
   return (
-    <section id="customers" className="bg-black">
+    <section id="customers" className="bg-transparent">
       <div className="mx-auto max-w-6xl px-4 py-16 text-center">
         <p className="text-sky-300 text-sm tracking-widest">Trusted by great teams</p>
         <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white">Our Customers</h2>
@@ -17,26 +17,20 @@ export default function Customers() {
         <div className="mt-8 overflow-hidden fade-mask">
           <ul className="marquee m-0 p-0 list-none flex items-center will-change-transform select-none">
             {loop.map((c, i) => (
-              // render logo + spacer pair for each item
               <li
                 key={`${c.title}-${i}`}
                 className="flex-none flex items-center"
                 aria-hidden={i >= customers.length ? true : undefined}
               >
-                {/* natural width logo, fixed height for consistency */}
                 <Image
                   src={c.img}
                   alt={c.title}
-                  width={240}            // large enough to cover widest logo
+                  width={240}
                   height={48}
                   className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                   priority={i < 6}
                 />
-                {/* fixed-width spacer (NOT CSS gap) */}
-                <span
-                  aria-hidden="true"
-                  className="block w-[40px] md:w-[48px] h-px"
-                />
+                <span aria-hidden="true" className="block w-[40px] md:w-[48px] h-px" />
               </li>
             ))}
           </ul>

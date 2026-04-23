@@ -2,9 +2,8 @@ import Image from "next/image";
 
 export default function Niceic() {
   return (
-    <section className="bg-black">
+    <section className="relative bg-transparent">
       <div className="mx-auto max-w-6xl px-4 py-16 grid items-center gap-10 md:grid-cols-2">
-        {/* Left: content */}
         <div className="relative">
           <span className="absolute -left-4 top-0 h-full w-px bg-white/20 hidden sm:block" />
           <div>
@@ -31,14 +30,13 @@ export default function Niceic() {
           </div>
         </div>
 
-        {/* Right: just the logo */}
         <div className="flex justify-center md:justify-end">
           <Image
-            src="/HomePageContents/NICEIC-logo-transparent.png"
+            src="/HomePageContents/NICEIC-logo-transparent-white-text.png"
             alt="NICEIC Approved Contractor"
-            className="h-46 w-auto" // adjust size here
-              width={520}          // adjust
-              height={160}         // adjust
+            className="h-46 w-auto"
+            width={520}
+            height={160}
           />
         </div>
       </div>

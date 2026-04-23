@@ -59,9 +59,9 @@ const items: Service[] = [
     href: "/services/pat-testing",
     accent: "bg-purple-500/15 text-purple-300",
     icon: (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-    <path d="M12 2l7 4v6c0 5-3.6 9.4-7 10-3.4-.6-7-5-7-10V6l7-4zm-1 13l5-5-1.4-1.4L11 12.2l-1.6-1.6L8 12l3 3z"/>
-    </svg>
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+        <path d="M12 2l7 4v6c0 5-3.6 9.4-7 10-3.4-.6-7-5-7-10V6l7-4zm-1 13l5-5-1.4-1.4L11 12.2l-1.6-1.6L8 12l3 3z"/>
+      </svg>
     ),
   },
   {
@@ -79,24 +79,22 @@ const items: Service[] = [
 
 export default function Services() {
   return (
-    <section className="bg-black">
-      {/* overflow-x-hidden here fences off any rounding error */}
-      <div className="mx-auto max-w-6xl px-4 py-16 overflow-x-hidden">
+    <section id="services" className="relative bg-transparent">
+      <div className="mx-auto max-w-6xl px-4 py-20 overflow-x-hidden">
         <p className="text-center text-sky-300 text-sm tracking-widest">
           Safe • Compliant • Professional
         </p>
+
         <h2 className="mt-2 text-center text-3xl md:text-4xl font-semibold text-white">
           Services we offer
         </h2>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 min-w-0">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 min-w-0">
           {items.map((s) => (
             <Link
               key={s.href}
               href={s.href}
-              className="group relative w-full min-w-0 box-border flex items-center gap-4
-                         rounded-full bg-white/5 px-5 py-5 ring-1 ring-white/10
-                         hover:bg-white/10 transition overflow-hidden"
+              className="group relative flex items-center gap-4 rounded-2xl bg-white/[0.04] backdrop-blur-xl px-5 py-5 ring-1 ring-white/10 hover:bg-white/[0.07] transition"
             >
               <span
                 className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${s.accent}`}
@@ -105,8 +103,8 @@ export default function Services() {
               </span>
 
               <div className="min-w-0">
-                <div className="text-white font-medium truncate">{s.label}</div>
-                <div className="text-gray-300 text-sm truncate">{s.desc}</div>
+                <div className="text-white font-medium">{s.label}</div>
+                <div className="text-gray-300 text-sm">{s.desc}</div>
               </div>
 
               <span className="ml-auto flex-none inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20">

@@ -8,45 +8,72 @@ export const metadata = {
     "Forber & Sons LTD — NICEIC approved electrical contractors. 25+ years experience. UK-wide coverage.",
 };
 
-// tiny inline icon set
-function StatIcon({ name }: { name: "years" | "uk" | "projects" | "certs" }) {
-  const cls = "h-5 w-5";
-  switch (name) {
-    case "years":
-      return (
-        <svg viewBox="0 0 24 24" className={cls} fill="currentColor">
-          <path d="M7 2h10v3H7zM5 6h14v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6zm4 4h2v8H9v-8zm4 0h2v8h-2v-8z" />
-        </svg>
-      );
-    case "uk":
-      return (
-        <svg viewBox="0 0 24 24" className={cls} fill="currentColor">
-          <path d="M3 5h18v2H3zm2 4h14v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9z" />
-        </svg>
-      );
-    case "projects":
-      return (
-        <svg viewBox="0 0 24 24" className={cls} fill="currentColor">
-          <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />
-        </svg>
-      );
-    case "certs":
-      return (
-        <svg viewBox="0 0 24 24" className={cls} fill="currentColor">
-          <path d="M7 2h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L14 3.5zM9.4 13.3l1.6 1.6 3.9-3.9 1.1 1.1-5 5-2.7-2.7 1.1-1.1z"/>
-        </svg>
-      );
-  }
+function Pill({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white ring-1 ring-white/10">
+      {children}
+    </span>
+  );
 }
 
 export default function AboutPage() {
   return (
-    <>
-      {/* SECTION 1 — Video first, content under */}
-      <section className="bg-black">
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          {/* Video frame */}
-          <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10">
+    <div className="relative min-h-screen text-white bg-[#020617]">
+      {/* Full-page blended background */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-20"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(2,132,199,0.18) 0%, rgba(15,23,42,0.78) 32%, rgb(2,6,23) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Top section */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(120deg, rgba(2,132,199,0.18) 0%, rgba(15,23,42,0.50) 45%, rgba(2,6,23,0.88) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 backdrop-blur-xl" aria-hidden="true" />
+
+        {/* bottom fade so it blends into the next content instead of cutting off */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-48 md:h-64"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(2,6,23,0.20) 45%, rgb(2,6,23) 100%)",
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-16 md:pt-20 md:pb-20">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sky-300 text-sm tracking-widest">ABOUT US</p>
+
+            <h1 className="mt-3 text-4xl md:text-6xl font-semibold leading-tight">
+              Trusted. Compliant. Experienced.
+            </h1>
+
+            <p className="mt-5 max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+              Forber &amp; Sons LTD has been delivering electrical installations,
+              maintenance, testing and specialist works since 1998, supporting
+              commercial and industrial clients across Merseyside and throughout the UK.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              <Pill>Established 1998</Pill>
+              <Pill>NICEIC Approved</Pill>
+              <Pill>UK-wide coverage</Pill>
+            </div>
+          </div>
+
+          {/* Video as centrepiece */}
+          <div className="mt-10 mx-auto max-w-5xl overflow-hidden rounded-3xl ring-1 ring-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl shadow-black/30">
             <video
               className="w-full h-auto block"
               autoPlay
@@ -61,81 +88,62 @@ export default function AboutPage() {
               Your browser does not support the video tag.
             </video>
           </div>
+        </div>
+      </section>
 
-          {/* Content below the video */}
-          <div className="mt-10 text-center">
-            <p className="text-sky-300 text-xs md:text-sm tracking-widest">ABOUT US</p>
-            <h1 className="mt-2 text-3xl md:text-4xl font-semibold text-white">
-              Trusted. Compliant. Experienced.
-            </h1>
+      {/* Main content */}
+      <section className="relative">
+        <div className="mx-auto max-w-6xl px-4 pb-12">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold">Who we are</h2>
 
-            <div className="mt-4 space-y-4 text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            <div className="mt-5 space-y-4 text-gray-300 leading-relaxed">
               <p>
-                Forber Electrical Services was established in 1998 and specialised in electrical installations.
-                We became <span className="text-white">Forber &amp; Sons LTD</span> in 2017.
+                Forber Electrical Services was established in 1998 and became{" "}
+                <span className="text-white">Forber &amp; Sons LTD</span> in 2017.
               </p>
               <p>
-                Our mission is to deliver safe, compliant and cost-effective electrical solutions nationwide —
-                building long-term partnerships on trust, reliability and tidy workmanship.
+                Our mission is to provide safe, compliant and cost-effective
+                electrical solutions, while building long-term client relationships
+                through reliability, communication and tidy workmanship.
               </p>
               <p>
-                As an <span className="text-white">NICEIC Approved Contractor</span>, we work to BS 7671:2018+A2:2022
-                and provide full certification &amp; documentation on completion.
+                As a <span className="text-white">NICEIC Approved Contractor</span>,
+                we work to BS 7671 and provide full certification and documentation
+                on completion.
               </p>
             </div>
+          </div>
 
-            {/* Trusted by */}
-            <h2 className="mt-8 text-sm font-semibold text-white/90">Trusted by</h2>
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          {/* Trusted by */}
+          <div className="mt-14 text-center">
+            <h3 className="text-lg font-semibold text-white">Trusted by</h3>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
               <Logo src="/CustomerLogos/Diago_Logo.png" alt="Diageo" />
               <Logo src="/CustomerLogos/Honeywell_Logo.png" alt="Honeywell" />
-              <Logo src="/CustomerImages/Suttons_Photopea_2.png" alt="Suttons" />
-            </div>
-
-            {/* Stats grid */}
-            <dl className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              <StatCard icon="years" label="Years in business" value="25+" />
-              <StatCard icon="uk" label="Coverage" value="UK-wide" />
-              <StatCard icon="projects" label="Projects delivered" value="1000+" />
-              <StatCard icon="certs" label="Approved & certified" value="NICEIC" />
-            </dl>
-
-            {/* CTAs */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full px-5 py-2 border border-white/20 text-white hover:bg-white/10"
-              >
-                View services
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full px-5 py-2 bg-white text-gray-900 font-medium hover:opacity-90"
-              >
-                Contact us
-              </Link>
+              <Logo src="/CustomerImages/Schenk_Logo.png" alt="Schenk" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 — Standards we work to (logos row/grid) */}
+      {/* Accreditations replaces the stats */}
       <Accreditations />
 
-      {/* SECTION 3 — Closing CTA strip */}
-      <section className="bg-black">
-        <div className="mx-auto max-w-6xl px-4 pb-16">
-          <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <p className="text-sky-300 text-sm tracking-widest">Work with us</p>
-              <h3 className="mt-1 text-xl md:text-2xl font-semibold text-white">
-                Need a dependable electrical partner?
-              </h3>
-              <p className="mt-2 text-gray-300">
-                From compliance testing to turnkey installations — we’ve got you covered.
-              </p>
-            </div>
-            <div className="flex items-center gap-3">
+      {/* CTA strip */}
+      <section className="relative">
+        <div className="mx-auto max-w-6xl px-4 pb-20 pt-6">
+          <div className="rounded-3xl bg-white/[0.04] backdrop-blur-xl ring-1 ring-white/10 p-6 md:p-8 text-center">
+            <p className="text-sky-300 text-sm tracking-widest">Work with us</p>
+            <h3 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
+              Need a dependable electrical partner?
+            </h3>
+            <p className="mt-3 max-w-2xl mx-auto text-gray-300">
+              From compliance testing to full installations, we provide reliable
+              electrical support for commercial and industrial clients across the UK.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-full px-5 py-2 border border-white/20 text-white hover:bg-white/10"
@@ -152,35 +160,15 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
 /* helpers */
 function Logo({ src, alt }: { src: string; alt: string }) {
   return (
-    <span className="relative h-8 w-28 md:h-10 md:w-36 grid place-items-center opacity-90">
+    <span className="relative h-8 w-28 md:h-10 md:w-36 grid place-items-center opacity-95">
       <Image src={src} alt={alt} fill className="object-contain" />
     </span>
-  );
-}
-
-function StatCard({
-  icon,
-  label,
-  value,
-}: {
-  icon: "years" | "uk" | "projects" | "certs";
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 text-center">
-      <div className="mx-auto mb-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
-        <StatIcon name={icon} />
-      </div>
-      <dt className="text-xs text-gray-400">{label}</dt>
-      <dd className="text-lg text-white font-semibold">{value}</dd>
-    </div>
   );
 }

@@ -83,7 +83,92 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "stop-start-suttons-project",
+    slug: "suttons-cabin-supply",
+    title: "Three Phase Cabin Supply - Suttons International ",
+    location: "Widnes",
+    sector: "Industrial",
+    summary: "TBA",
+    hero: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/AboutImages/Coming_Soon.png",
+      "/AboutImages/Coming_Soon.png",
+    ],
+    highlights: [
+      "TBA",
+      "TBA",
+      "TBA",
+    ],
+  },
+  {
+    slug: "test-2",
+    title: "Coming Soon ",
+    location: "TBA",
+    sector: "TBA",
+    summary: "TBA",
+    hero: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/AboutImages/Coming_Soon.png",
+      "/AboutImages/Coming_Soon.png",
+    ],
+    highlights: [
+      "TBA",
+      "TBA",
+      "TBA",
+    ],
+  },
+  {
+    slug: "test-3",
+    title: "Coming Soon ",
+    location: "TBA",
+    sector: "TBA",
+    summary: "TBA",
+    hero: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/AboutImages/Coming_Soon.png",
+      "/AboutImages/Coming_Soon.png",
+    ],
+    highlights: [
+      "TBA",
+      "TBA",
+      "TBA",
+    ],
+  },
+  {
+    slug: "test-4",
+    title: "Coming Soon ",
+    location: "TBA",
+    sector: "TBA",
+    summary: "TBA",
+    hero: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/AboutImages/Coming_Soon.png",
+      "/AboutImages/Coming_Soon.png",
+    ],
+    highlights: [
+      "TBA",
+      "TBA",
+      "TBA",
+    ],
+  },
+  {
+    slug: "test-5",
+    title: "Coming Soon ",
+    location: "TBA",
+    sector: "TBA",
+    summary: "TBA",
+    hero: "/AboutImages/Coming_Soon.png",
+    gallery: [
+      "/AboutImages/Coming_Soon.png",
+      "/AboutImages/Coming_Soon.png",
+    ],
+    highlights: [
+      "TBA",
+      "TBA",
+      "TBA",
+    ],
+  },
+  {
+    slug: "test-6",
     title: "Coming Soon ",
     location: "TBA",
     sector: "TBA",
@@ -100,3 +185,4 @@ export const projects: Project[] = [
     ],
   },
 ];
+

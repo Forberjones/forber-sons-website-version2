@@ -8,9 +8,8 @@ import Customers from "./components/customers";
 export default function HomePage() {
   return (
     <>
-     {/* HERO */}
-      <section className="relative min-h-screen md:min-h-[90vh] flex items-center justify-center text-center">
-        {/* Background image + overlays */}
+      {/* HERO */}
+      <section className="relative min-h-screen md:min-h-[90vh] flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/HomePageContents/Cover_Page_1.JPG"
@@ -20,12 +19,10 @@ export default function HomePage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-[#020617]" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 px-4 max-w-4xl mx-auto text-center">
-          {/* Logo */}
           <div className="flex justify-center mb-8">
             <Image
               src="/HomePageContents/Final_Logo_Test.png"
@@ -52,23 +49,21 @@ export default function HomePage() {
             Based in the North West
           </p>
 
-          {/* CTA buttons */}
-<div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-  <Link
-    href="/services"
-    className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white text-gray-900 font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/60"
-  >
-    View Services
-  </Link>
-  <Link
-    href="/portfolio"
-    className="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/30 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
-  >
-    See Our Work
-  </Link>
-</div>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white text-gray-900 font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/60"
+            >
+              View Services
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/30 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              See Our Work
+            </Link>
+          </div>
 
-          {/* Trust badges */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-gray-300">
             <span className="inline-flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/80"></span> NICEIC Approved
@@ -81,7 +76,6 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Scroll arrow */}
           <a
             href="#services"
             className="mt-12 mx-auto block w-fit text-gray-300 hover:text-white"
@@ -99,23 +93,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SHARED GRADIENT FOR ALL LOWER SECTIONS */}
+      <div className="relative overflow-hidden bg-[#020617]">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(2,132,199,0.16) 0%, rgba(15,23,42,0.72) 28%, rgb(2,6,23) 100%)",
+          }}
+          aria-hidden="true"
+        />
 
-      {/* You can add more sections below */}
-
-      {/* NICEIC block */}
-      <Niceic />
-
-      {/* Services block */}
-      <Services />
-
-      {/* Customers carousel */}
-      <Customers />
-
-      {/* Contact block */}
-      <Contact />
-
-
-
+        <Niceic />
+        <Services />
+        <Customers />
+        <Contact />
+      </div>
     </>
   );
 }
