@@ -32,7 +32,7 @@ export default function Niceic() {
 
         <div className="flex justify-center md:justify-end">
           <Image
-            src="/HomePageContents/NICEIC-logo-transparent-white-text.png"
+            src="/HomePageContents/25years-niceic-transparent.png"
             alt="NICEIC Approved Contractor"
             className="h-46 w-auto"
             width={520}
