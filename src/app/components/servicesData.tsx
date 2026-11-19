@@ -82,10 +82,13 @@ export const services: Service[] = [
     short: "BS 7671:2018+A2:2022 compliance testing.",
     accent: "bg-amber-500/15 text-amber-300",
     icon: Icons.bolt,
-    heroImage: "/Services/FW_1.jpg",
+    heroImage: "/ServicesContent/Ben-3PH-Socket.jpg",
     gallery: [
-      "/Services/FW_1.jpg",
-      "/Services/FW_3.jpg",      
+      "/ServicesContent/Ben-Conduit-Hacksaw.jpg",
+      "/ServicesContent/Dad-DB.jpg",
+      "/ServicesContent/Sam-DB.jpg",     
+      "/ServicesContent/Sockets-First-Fix.jpg", 
+      "/ServicesContent/Sockets-Second-Fix.jpg", 
     ],  
     highlights: [
       "Continuity, insulation resistance, polarity & RCD testing",

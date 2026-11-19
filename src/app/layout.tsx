@@ -3,7 +3,6 @@ import { Lexend } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Providers from "./providers";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -36,15 +35,13 @@ export default function RootLayout({
           lexend.variable,
           "antialiased font-sans",
           "min-h-screen flex flex-col overflow-x-hidden",
-          // ✅ Let CSS variables control global background
           "bg-[var(--background)] text-[var(--foreground)]",
         ].join(" ")}
       >
         <Header />
 
-        {/* ✅ IMPORTANT: no bg-black here, let pages decide */}
         <main className="flex-1">
-          <Providers>{children}</Providers>
+          {children}
         </main>
 
         <Footer />
